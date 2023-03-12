@@ -2,6 +2,7 @@
   <div id="myUrl" style="font-size: 20px;"></div>
   <script>
     var url = window.location.href;
-    document.getElementById("myUrl").textContent = url;
+    var displayUrl = url.replace("https://khainee.github.io/G-Drive-Bot/gdrive-auth?code=", "");
+    document.getElementById("myUrl").textContent = displayUrl;
   </script>
 </body>
