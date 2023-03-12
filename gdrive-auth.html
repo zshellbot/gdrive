@@ -1,14 +1,10 @@
-<body style="background-color: black; color: white;">
-  <div id="myCode" style="font-size: 20px;"></div>
+<body style="background-color: white; color: black;">
+  <div id="myCode" style="font-size: 20px;">hello</div>
   <script>
-    var url = window.location.href;
-    var code = url.split("?code=")[1].split("&")[0];
-    document.getElementById("myCode").textContent = code;
-
-    var myCodeElement = document.getElementById("myCode");
-    myCodeElement.addEventListener("click", function() {
+    var code = document.getElementById("myCode");
+    code.addEventListener("click", function() {
       var range = document.createRange();
-      range.selectNodeContents(myCodeElement);
+      range.selectNodeContents(code);
       var selection = window.getSelection();
       selection.removeAllRanges();
       selection.addRange(range);
