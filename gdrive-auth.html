@@ -1,15 +1,8 @@
-<body style="background-color: white; color: black;">
-  <div id="myCode" style="font-size: 20px;">hello</div>
+<body style="background-color: black; color: white;">
+  <div id="myCode" style="font-size: 20px;"></div>
   <script>
-    var code = document.getElementById("myCode");
-    code.addEventListener("click", function() {
-      var range = document.createRange();
-      range.selectNodeContents(code);
-      var selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-      document.execCommand("copy");
-      alert("Text copied to clipboard!");
-    });
+    var url = window.location.href;
+    var code = url.split("?code=")[1].split("&")[0];
+    document.getElementById("myCode").textContent = code;
   </script>
 </body>
