@@ -1,8 +1,8 @@
 <body style="background-color: black; color: white;">
-  <div id="myUrl" style="font-size: 20px;"></div>
+  <div id="myCode" style="font-size: 20px;"></div>
   <script>
     var url = window.location.href;
-    var displayUrl = url.replace("https://khainee.github.io/G-Drive-Bot/gdrive-auth?code=", "");
-    document.getElementById("myUrl").textContent = displayUrl;
+    var code = url.split("?code=")[1].split("&")[0];
+    document.getElementById("myCode").textContent = code;
   </script>
 </body>
