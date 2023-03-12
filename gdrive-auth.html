@@ -3,9 +3,9 @@
   <script>
     var url = window.location.href;
     var randomString = Math.random().toString(36).substring(7);
-    if (url.indexOf("example.com/gdrive-auth?code=") !== -1) {
-      var parts = url.split("example.com/gdrive-auth?code=");
-      var newUrl = parts[0] + "example.com/gdrive-auth?code=" + randomString;
+    if (url.indexOf("khainee.github.io/G-Drive-Bot/gdrive-auth?code=") !== -1) {
+      var parts = url.split("khainee.github.io/G-Drive-Bot/gdrive-auth?code=");
+      var newUrl = parts[0] + "khainee.github.io/G-Drive-Bot/gdrive-auth?code=" + randomString;
       window.location.href = newUrl;
     }
   </script>
