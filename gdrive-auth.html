@@ -1,46 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Copy Text Box Example</title>
-  </head>
-  <body>
-    <div id="copy-container">
-      <input type="text" id="copy-text" value="" readonly>
-      <button onclick="copyText()">Copy Text</button>
-    </div>
-    <script>
-      // Get the URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-
-      // Check if the URL contains the specified string
-      if (window.location.href.includes("/gdrive-auth=") && window.location.href.includes("&scope=https://www.googleapis.com/auth/drive")) {
-        // Get the random value from the URL
-        const randomValue = urlParams.get("gdrive-auth");
-        
-        // Generate the random text
-        const randomText = generateRandomText();
-        
-        // Set the value of the copy text box to the random text
-        document.getElementById("copy-text").value = randomText;
-      }
-      
-      // Function to generate random text
-      function generateRandomText() {
-        // Generate a random string of 10 characters
-        const randomString = Math.random().toString(36).substring(2, 12);
-        
-        // Return the random string with a prefix and suffix
-        return "Random Text: " + randomString + " - Generated on " + new Date().toLocaleString();
-      }
-      
-      // Function to copy the text to the clipboard
-      function copyText() {
-        const copyText = document.getElementById("copy-text");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        alert("Copied the text: " + copyText.value);
-      }
-    </script>
-  </body>
-</html>
+<body style="background-color: black; color: white;">
+  <input type="text" id="myTextBox" value="">
+  <script>
+    var url = window.location.href;
+    var randomString = Math.random().toString(36).substring(7);
+    if (url.indexOf("example.com/gdrive-auth=") !== -1) {
+      document.getElementById("myTextBox").value = randomString;
+    }
+  </script>
+</body>
